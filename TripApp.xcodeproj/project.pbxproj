@@ -3,17 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		03373D0822929C1D001B8126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03373D0722929C1D001B8126 /* AppDelegate.swift */; };
-		03373D0A22929C1D001B8126 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03373D0922929C1D001B8126 /* ViewController.swift */; };
 		03373D0D22929C1D001B8126 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03373D0B22929C1D001B8126 /* Main.storyboard */; };
 		03373D0F22929C1F001B8126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03373D0E22929C1F001B8126 /* Assets.xcassets */; };
 		03373D1222929C1F001B8126 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03373D1022929C1F001B8126 /* LaunchScreen.storyboard */; };
 		03373D1D22929C1F001B8126 /* TripAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03373D1C22929C1F001B8126 /* TripAppTests.swift */; };
 		03373D2822929C1F001B8126 /* TripAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03373D2722929C1F001B8126 /* TripAppUITests.swift */; };
+		03373D3C2292AE7B001B8126 /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03373D3B2292AE7B001B8126 /* AddTripViewController.swift */; };
+		03373D3E2292BBA5001B8126 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03373D3D2292BBA5001B8126 /* DatePickerDialog.swift */; };
+		0383E0252293ECC700D4A3B9 /* TripListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383E0242293ECC700D4A3B9 /* TripListViewController.swift */; };
+		0383E03022940F1B00D4A3B9 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383E02F22940F1B00D4A3B9 /* TripTableViewCell.swift */; };
+		188CD35BD0F6A606DF7195E8 /* Pods_TripAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F14E8F87AB0A48C465BB86D /* Pods_TripAppTests.framework */; };
+		2A6760BE22B1229A009EF8B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A6760BD22B1229A009EF8B7 /* GoogleService-Info.plist */; };
+		2A6760C022B12794009EF8B7 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6760BF22B12794009EF8B7 /* Student.swift */; };
+		2A6760C222B12E1A009EF8B7 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6760C122B12E1A009EF8B7 /* Reachability.swift */; };
+		D0078D8DBD830E58A559BC3D /* Pods_TripAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2578DAE561300E0E2F722A30 /* Pods_TripAppUITests.framework */; };
+		D0900B0FFA3DD681C1D1AF6F /* Pods_TripApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3F24E1C52C89081B47C7B7 /* Pods_TripApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +45,6 @@
 /* Begin PBXFileReference section */
 		03373D0422929C1D001B8126 /* TripApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03373D0722929C1D001B8126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		03373D0922929C1D001B8126 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		03373D0C22929C1D001B8126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03373D0E22929C1F001B8126 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03373D1122929C1F001B8126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +55,22 @@
 		03373D2322929C1F001B8126 /* TripAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03373D2722929C1F001B8126 /* TripAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripAppUITests.swift; sourceTree = "<group>"; };
 		03373D2922929C1F001B8126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03373D3B2292AE7B001B8126 /* AddTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
+		03373D3D2292BBA5001B8126 /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
+		0383E0242293ECC700D4A3B9 /* TripListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewController.swift; sourceTree = "<group>"; };
+		0383E02F22940F1B00D4A3B9 /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
+		2578DAE561300E0E2F722A30 /* Pods_TripAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A6760BD22B1229A009EF8B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2A6760BF22B12794009EF8B7 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		2A6760C122B12E1A009EF8B7 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		4360B9798D22EB351A354DF1 /* Pods-TripApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripApp.release.xcconfig"; path = "Target Support Files/Pods-TripApp/Pods-TripApp.release.xcconfig"; sourceTree = "<group>"; };
+		48CCBA4E1FB6F99DB7F22F61 /* Pods-TripApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripApp.debug.xcconfig"; path = "Target Support Files/Pods-TripApp/Pods-TripApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4E3F24E1C52C89081B47C7B7 /* Pods_TripApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F14E8F87AB0A48C465BB86D /* Pods_TripAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD56BA9CEE51D34C174D2489 /* Pods-TripAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TripAppUITests/Pods-TripAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BC858354A46EE67470BF060E /* Pods-TripAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-TripAppUITests/Pods-TripAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CDC6FDB809A20F2C5F09143B /* Pods-TripAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TripAppTests/Pods-TripAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EF3C21D25D0DF2E317AC439D /* Pods-TripAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripAppTests.release.xcconfig"; path = "Target Support Files/Pods-TripAppTests/Pods-TripAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0900B0FFA3DD681C1D1AF6F /* Pods_TripApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188CD35BD0F6A606DF7195E8 /* Pods_TripAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0078D8DBD830E58A559BC3D /* Pods_TripAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +104,13 @@
 		03373CFB22929C1D001B8126 = {
 			isa = PBXGroup;
 			children = (
+				2A6760BD22B1229A009EF8B7 /* GoogleService-Info.plist */,
 				03373D0622929C1D001B8126 /* TripApp */,
 				03373D1B22929C1F001B8126 /* TripAppTests */,
 				03373D2622929C1F001B8126 /* TripAppUITests */,
 				03373D0522929C1D001B8126 /* Products */,
+				54A70A3F1123290BD24C3A52 /* Pods */,
+				C5E9F09B599DCEDCA9DAF430 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +127,10 @@
 		03373D0622929C1D001B8126 /* TripApp */ = {
 			isa = PBXGroup;
 			children = (
+				0383E0312294324900D4A3B9 /* Model */,
+				0383E02E229407B300D4A3B9 /* Controllers */,
+				0383E02C2293F04500D4A3B9 /* DatePicker */,
 				03373D0722929C1D001B8126 /* AppDelegate.swift */,
-				03373D0922929C1D001B8126 /* ViewController.swift */,
 				03373D0B22929C1D001B8126 /* Main.storyboard */,
 				03373D0E22929C1F001B8126 /* Assets.xcassets */,
 				03373D1022929C1F001B8126 /* LaunchScreen.storyboard */,
@@ -125,6 +157,56 @@
 			path = TripAppUITests;
 			sourceTree = "<group>";
 		};
+		0383E02C2293F04500D4A3B9 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				03373D3D2292BBA5001B8126 /* DatePickerDialog.swift */,
+			);
+			path = DatePicker;
+			sourceTree = "<group>";
+		};
+		0383E02E229407B300D4A3B9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				03373D3B2292AE7B001B8126 /* AddTripViewController.swift */,
+				0383E0242293ECC700D4A3B9 /* TripListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0383E0312294324900D4A3B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0383E02F22940F1B00D4A3B9 /* TripTableViewCell.swift */,
+				2A6760BF22B12794009EF8B7 /* Student.swift */,
+				2A6760C122B12E1A009EF8B7 /* Reachability.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		54A70A3F1123290BD24C3A52 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48CCBA4E1FB6F99DB7F22F61 /* Pods-TripApp.debug.xcconfig */,
+				4360B9798D22EB351A354DF1 /* Pods-TripApp.release.xcconfig */,
+				CDC6FDB809A20F2C5F09143B /* Pods-TripAppTests.debug.xcconfig */,
+				EF3C21D25D0DF2E317AC439D /* Pods-TripAppTests.release.xcconfig */,
+				BC858354A46EE67470BF060E /* Pods-TripAppUITests.debug.xcconfig */,
+				AD56BA9CEE51D34C174D2489 /* Pods-TripAppUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C5E9F09B599DCEDCA9DAF430 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E3F24E1C52C89081B47C7B7 /* Pods_TripApp.framework */,
+				7F14E8F87AB0A48C465BB86D /* Pods_TripAppTests.framework */,
+				2578DAE561300E0E2F722A30 /* Pods_TripAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03373D2C22929C1F001B8126 /* Build configuration list for PBXNativeTarget "TripApp" */;
 			buildPhases = (
+				C6E21B0BF240DA452AA19BAF /* [CP] Check Pods Manifest.lock */,
 				03373D0022929C1D001B8126 /* Sources */,
 				03373D0122929C1D001B8126 /* Frameworks */,
 				03373D0222929C1D001B8126 /* Resources */,
+				01DADDE4378ED36C81C80346 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +233,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03373D2F22929C1F001B8126 /* Build configuration list for PBXNativeTarget "TripAppTests" */;
 			buildPhases = (
+				54FFF6E530C68C0370FD01BB /* [CP] Check Pods Manifest.lock */,
 				03373D1422929C1F001B8126 /* Sources */,
 				03373D1522929C1F001B8126 /* Frameworks */,
 				03373D1622929C1F001B8126 /* Resources */,
@@ -167,6 +252,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03373D3222929C1F001B8126 /* Build configuration list for PBXNativeTarget "TripAppUITests" */;
 			buildPhases = (
+				0F52171B20D9A9510322CCC5 /* [CP] Check Pods Manifest.lock */,
 				03373D1F22929C1F001B8126 /* Sources */,
 				03373D2022929C1F001B8126 /* Frameworks */,
 				03373D2122929C1F001B8126 /* Resources */,
@@ -230,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03373D1222929C1F001B8126 /* LaunchScreen.storyboard in Resources */,
+				2A6760BE22B1229A009EF8B7 /* GoogleService-Info.plist in Resources */,
 				03373D0F22929C1F001B8126 /* Assets.xcassets in Resources */,
 				03373D0D22929C1D001B8126 /* Main.storyboard in Resources */,
 			);
@@ -251,13 +338,104 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01DADDE4378ED36C81C80346 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TripApp/Pods-TripApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TripApp/Pods-TripApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TripApp/Pods-TripApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0F52171B20D9A9510322CCC5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TripAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54FFF6E530C68C0370FD01BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TripAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6E21B0BF240DA452AA19BAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TripApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		03373D0022929C1D001B8126 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03373D0A22929C1D001B8126 /* ViewController.swift in Sources */,
+				2A6760C222B12E1A009EF8B7 /* Reachability.swift in Sources */,
+				0383E03022940F1B00D4A3B9 /* TripTableViewCell.swift in Sources */,
+				2A6760C022B12794009EF8B7 /* Student.swift in Sources */,
+				0383E0252293ECC700D4A3B9 /* TripListViewController.swift in Sources */,
+				03373D3C2292AE7B001B8126 /* AddTripViewController.swift in Sources */,
 				03373D0822929C1D001B8126 /* AppDelegate.swift in Sources */,
+				03373D3E2292BBA5001B8126 /* DatePickerDialog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,16 +608,21 @@
 		};
 		03373D2D22929C1F001B8126 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48CCBA4E1FB6F99DB7F22F61 /* Pods-TripApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TripApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = demo.TripApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.student-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -447,16 +630,21 @@
 		};
 		03373D2E22929C1F001B8126 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4360B9798D22EB351A354DF1 /* Pods-TripApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TripApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = demo.TripApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.student-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -464,6 +652,7 @@
 		};
 		03373D3022929C1F001B8126 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDC6FDB809A20F2C5F09143B /* Pods-TripAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -484,6 +673,7 @@
 		};
 		03373D3122929C1F001B8126 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF3C21D25D0DF2E317AC439D /* Pods-TripAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -504,6 +694,7 @@
 		};
 		03373D3322929C1F001B8126 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC858354A46EE67470BF060E /* Pods-TripAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +714,7 @@
 		};
 		03373D3422929C1F001B8126 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD56BA9CEE51D34C174D2489 /* Pods-TripAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

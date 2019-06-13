@@ -11,8 +11,43 @@ import XCTest
 
 class TripAppTests: XCTestCase {
 
+    let view = TripListViewController()
+    var window: UIWindow!
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+//        var dict: [String: Any] = [:]
+        
+        window = UIWindow()
+        
+        let array = NSMutableArray()
+        
+        let data1 = ["startDate" : "25-4-19",
+                     "endDate" : "26-4-19",
+                     "name" : "trip 1"] as [String : Any]
+        
+        array.add(data1)
+        
+        let data2 = ["startDate" : "25-5-19",
+                     "endDate" : "26-5-19",
+                     "name" : "trip 2"] as [String : Any]
+        array.add(data2)
+        
+        let data3 = ["startDate" : "25-6-19",
+                     "endDate" : "26-6-19",
+                     "name" : "trip 3"] as [String : Any]
+        array.add(data3)
+        
+        view.UserDate(Data: array as! Array<Any>);
+        
+        self.loadView()
+    }
+    
+    func loadView()
+    {
+        window.addSubview(view.view)
+        RunLoop.current.run(until: Date())
     }
 
     override func tearDown() {
