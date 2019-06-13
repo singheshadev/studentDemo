@@ -1,6 +1,6 @@
 //
-//  addTripViewController.swift
-//  TripApp
+//  AddStudentViewController.swift
+//  StudentDemo
 //
 //  Created by Mac_mojave-2k19(2) on 20/05/19.
 //  Copyright © 2019 Mac_mojave-2k19(2). All rights reserved.
@@ -10,7 +10,7 @@ import FirebaseFirestore
 import RxSwift
 import SQLite3
 
-class AddTripViewController: UIViewController, UITextFieldDelegate {
+class AddStudentViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var standardTextField: UITextField!

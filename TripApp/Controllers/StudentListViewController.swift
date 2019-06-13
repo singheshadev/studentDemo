@@ -272,7 +272,7 @@ class TripListViewController: UIViewController {
     //MARK:- Button Action
     
     @IBAction func addTrips(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "AddTripViewController") as! AddTripViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: "AddStudentViewController") as! AddStudentViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
