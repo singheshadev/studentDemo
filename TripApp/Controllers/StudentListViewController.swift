@@ -55,7 +55,7 @@ class StudentListViewController: UIViewController {
             let cell = cell as! StudentTableViewCell
             let standard = model.standard
             let school = model.school
-            
+            print("model \(model.name)",model.school,model.standard,model.studentId)
             cell.nameLabel.text = "Name : \(model.name)"
             cell.standardLabel.text = "Standard : \(standard)"
             cell.schoolLabel.text = "School : \(school)"
@@ -64,11 +64,15 @@ class StudentListViewController: UIViewController {
             }.disposed(by: disposeBag)
         
         tableView.rx.modelSelected(Students.self)
-            .map{ URL(string: $0.name) }
-            .subscribe(onNext: { [weak self] url in
-                guard url != nil else {
-                    return
-                }
+            .subscribe(onNext: { [weak self] obj in
+                print(obj.name, obj.standard,obj.school,obj.studentId)
+                let vc = self?.storyboard?.instantiateViewController(withIdentifier: "AddStudentViewController") as! AddStudentViewController
+                vc.isUpdate = true
+                vc.updateName = obj.name
+                vc.updateSchool = obj.school
+                vc.updateStandard = obj.standard
+                vc.updateID = obj.studentId
+                self?.navigationController?.pushViewController(vc, animated: true)
             }).disposed(by: disposeBag)
         
         tableView.rx.itemDeleted
@@ -88,11 +92,15 @@ class StudentListViewController: UIViewController {
                     }
                     self.loadingData()
                 }else{
-                    //delete row and reload table
+                    let obj = self.arrStudents[$0.last ?? 0] as! Students
+                    self.delete(id: obj.studentId)
                 }
             })
             
             .disposed(by: disposeBag)
+        
+       
+
     }
     
     //MARK:- Viewwillappear
@@ -102,7 +110,7 @@ class StudentListViewController: UIViewController {
         fetchingData()
     }
     
-    // MARK: - API Calling -
+    // MARK: - Fetching data -
     func fetchingData() {
         if Reachability.isConnectedToNetwork() {
             let db = Firestore.firestore()
@@ -143,7 +151,7 @@ class StudentListViewController: UIViewController {
         }
         
         //creating table
-        if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS Student (id INTEGER, name TEXT, standard INTEGER, school TEXT)", nil, nil, nil) != SQLITE_OK {
+        if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS Student (id TEXT, name TEXT, standard INTEGER, school TEXT)", nil, nil, nil) != SQLITE_OK {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error creating table: \(errmsg)")
         }else{
@@ -161,31 +169,17 @@ class StudentListViewController: UIViewController {
         var selectStatement: OpaquePointer? = nil
         
         if sqlite3_prepare(db, selectStatementString, -1, &selectStatement, nil) == SQLITE_OK{
-            self.arrStudents.removeAllObjects()
+            self.arrStudents = []
             
             while(sqlite3_step(selectStatement) == SQLITE_ROW){
-                let id = sqlite3_column_int(selectStatement, 1)
-                
-                var name = "temp"
-                if (sqlite3_column_text(selectStatement, 2) != nil){
-                    name = String(cString: sqlite3_column_text(selectStatement, 2))
-                }else{
-                    name = "temp"
-                }
-                
-//                let name = ( ? String(cString: sqlite3_column_text(selectStatement, 1)) : "temp")
-                let standard = sqlite3_column_int(selectStatement, 3)
-                var school = "school"
-                if sqlite3_column_text(selectStatement, 4) != nil {
-                 school = String(cString: sqlite3_column_text(selectStatement, 4))
-                }else{
-                    school = "school"
-                }
-                print("Query Result:")
-                print("\(id) | \(name) | \(school) | \(standard)")
+                let name2 = String(cString: sqlite3_column_text(selectStatement, 1))
+                let school = String(cString: sqlite3_column_text(selectStatement, 3))
+                let id = String(cString: sqlite3_column_text(selectStatement,0))
+                let standard = String(cString: sqlite3_column_text(selectStatement, 2))
+    
                 let obj = Students()
                 obj.studentId = "\(id)"
-                obj.name = name
+                obj.name = name2
                 obj.standard = "\(standard)"
                 obj.school = school
                 
@@ -209,24 +203,24 @@ class StudentListViewController: UIViewController {
     
     //MARK:- Insert data into local database
     
-    let insertStatementString = "INSERT INTO Student (name, standard ,school) VALUES (?,?,?);"
+    let insertStatementString = "INSERT INTO Student (id, name, standard ,school) VALUES (?,?,?,?);"
     
-    func insert(name: String, school: String, standard: String) {
+    func insert(id: String, name: String, school: String, standard: String) {
         var insertStatement: OpaquePointer? = nil
         
         if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
             let name: NSString = name as NSString
             let standard : Int32 = Int32(standard)!
             let school: NSString = school as NSString
+            let newId : NSString = id as NSString
             
-            // 2
             sqlite3_bind_int(insertStatement, 3, Int32(standard))
-            // 3
             sqlite3_bind_text(insertStatement, 2, name.utf8String, -1, nil)
             sqlite3_bind_text(insertStatement, 4, school.utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 1, newId.utf8String, -1, nil)
             
-            // 4
             if sqlite3_step(insertStatement) == SQLITE_DONE {
+                print("id: \(newId), name : \(name) , School: \(school), standard: \(standard)")
                 print("Successfully inserted row.")
             } else {
                 print("Could not insert row.")
@@ -234,9 +228,49 @@ class StudentListViewController: UIViewController {
         } else {
             print("INSERT statement could not be prepared.")
         }
-        // 5
+        
         sqlite3_finalize(insertStatement)
     }
+    //MARK:- Delete One Record from local databse
+    
+    func delete(id: String) {
+        var deleteStatement: OpaquePointer? = nil
+        print("DELETE FROM Student WHERE Id = \(id);")
+        if sqlite3_prepare_v2(db, "DELETE FROM Student WHERE id = '\(id)';", -1, &deleteStatement, nil) == SQLITE_OK {
+            if sqlite3_step(deleteStatement) == SQLITE_DONE {
+                print("Successfully deleted row.")
+                dataFetch()
+                tableView.reloadData()
+            } else {
+                print("Could not delete row.")
+            }
+        } else {
+            print("DELETE statement could not be prepared")
+        }
+        
+        sqlite3_finalize(deleteStatement)
+    }
+    
+    //MARK:- Delete ALLData from local database
+    
+    let deleteStatementStirng = "DELETE FROM Student;"
+    
+    func deleteAll() {
+        var deleteStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, deleteStatementStirng, -1, &deleteStatement, nil) == SQLITE_OK {
+            if sqlite3_step(deleteStatement) == SQLITE_DONE {
+                print("Successfully deleted Data.")
+            } else {
+                print("Could not delete Data.")
+            }
+        } else {
+            print("DELETE statement could not be prepared")
+        }
+        
+        sqlite3_finalize(deleteStatement)
+    }
+    
+    
     //MARK:- Load Data
     
     func loadingData() {
@@ -247,6 +281,7 @@ class StudentListViewController: UIViewController {
                     print("Error getting documents: \(err)")
                 } else {
                     self.arrStudents = []
+                    self.deleteAll()
                     for document in querySnapshot!.documents {
                         print("\(document.documentID) => \(document.data())")
                         
@@ -258,7 +293,7 @@ class StudentListViewController: UIViewController {
                         obj.standard = "\(dict["standard"] ?? 1)"
                         obj.school = dict["school"] as! String
                         print("obj \(obj)")
-                        self.insert(name: obj.name, school: obj.school, standard: obj.standard)
+                        self.insert(id: obj.studentId ,name: obj.name, school: obj.school, standard: obj.standard)
                         self.arrStudents.add(obj)
                     }
                     self.students.accept(self.arrStudents as! [Students])

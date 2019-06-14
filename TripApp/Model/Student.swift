@@ -9,19 +9,19 @@
 import Foundation
 
 class Student {
-    let id: Int64?
+    let id: String
     var name: String
     var school: String
     var standard: String
     
-    init(id: Int64) {
+    init(id: String) {
         self.id = id
         name = ""
         school = ""
         standard = ""
     }
     
-    init(id: Int64, name: String, school: String, standard: String) {
+    init(id: String, name: String, school: String, standard: String) {
         self.id = id
         self.name = name
         self.school = school

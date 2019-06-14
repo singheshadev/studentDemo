@@ -110,7 +110,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G8p-zQ-mVM">
                                 <rect key="frame" x="32" y="148" width="350" height="600"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Mh-Fa-bbv">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Mh-Fa-bbv">
                                         <rect key="frame" x="20" y="59" width="310" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="bu3-7e-isV"/>
@@ -119,9 +119,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtX-02-nGE">
-                                        <rect key="frame" x="60" y="500" width="230" height="50"/>
-                                        <color key="backgroundColor" red="0.35362644758974848" green="0.31345665514313559" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtX-02-nGE">
+                                        <rect key="frame" x="60" y="289" width="230" height="50"/>
+                                        <color key="backgroundColor" red="0.14084121584892273" green="0.52331650257110596" blue="0.53526300191879272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="GDU-oL-QQD"/>
                                         </constraints>
@@ -133,13 +133,13 @@
                                             <action selector="addStudentButton:" destination="t89-fZ-c9i" eventType="touchUpInside" id="WZA-ad-G3b"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="School" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s4E-Fo-ezu">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="School" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s4E-Fo-ezu">
                                         <rect key="frame" x="20" y="129" width="310" height="45"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Standard" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XAt-Ny-BJM">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Standard" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XAt-Ny-BJM">
                                         <rect key="frame" x="20" y="199" width="310" height="45"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -154,7 +154,6 @@
                                     <constraint firstItem="s4E-Fo-ezu" firstAttribute="height" secondItem="1Mh-Fa-bbv" secondAttribute="height" id="OOI-2R-foP"/>
                                     <constraint firstItem="XAt-Ny-BJM" firstAttribute="height" secondItem="1Mh-Fa-bbv" secondAttribute="height" id="Ol2-lH-sig"/>
                                     <constraint firstAttribute="trailing" secondItem="1Mh-Fa-bbv" secondAttribute="trailing" constant="20" id="Ppu-Mc-2o9"/>
-                                    <constraint firstAttribute="bottom" secondItem="AtX-02-nGE" secondAttribute="bottom" constant="50" id="QMk-ve-Okh"/>
                                     <constraint firstItem="XAt-Ny-BJM" firstAttribute="top" secondItem="s4E-Fo-ezu" secondAttribute="bottom" constant="25" id="R0R-2t-Qot"/>
                                     <constraint firstAttribute="height" constant="600" id="T6T-99-q7f"/>
                                     <constraint firstItem="XAt-Ny-BJM" firstAttribute="centerX" secondItem="1Mh-Fa-bbv" secondAttribute="centerX" id="UZb-Ea-ul4"/>
@@ -167,6 +166,7 @@
                                     <constraint firstItem="XAt-Ny-BJM" firstAttribute="width" secondItem="1Mh-Fa-bbv" secondAttribute="width" id="l3h-GG-te7"/>
                                     <constraint firstItem="1Mh-Fa-bbv" firstAttribute="top" secondItem="G8p-zQ-mVM" secondAttribute="top" constant="59" id="pEo-xf-mTo"/>
                                     <constraint firstItem="1Mh-Fa-bbv" firstAttribute="centerX" secondItem="G8p-zQ-mVM" secondAttribute="centerX" id="qyP-iI-A3G"/>
+                                    <constraint firstItem="AtX-02-nGE" firstAttribute="top" secondItem="XAt-Ny-BJM" secondAttribute="bottom" constant="45" id="sYu-dB-65g"/>
                                     <constraint firstItem="s4E-Fo-ezu" firstAttribute="top" secondItem="1Mh-Fa-bbv" secondAttribute="bottom" constant="25" id="yXo-BX-3RX"/>
                                     <constraint firstAttribute="trailing" secondItem="AtX-02-nGE" secondAttribute="trailing" constant="60" id="zKo-Ks-AeV"/>
                                 </constraints>
@@ -181,6 +181,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="4Zy-SN-3Up"/>
                     <connections>
+                        <outlet property="addStudentButton" destination="AtX-02-nGE" id="gCo-be-9Sf"/>
                         <outlet property="mainBackView" destination="G8p-zQ-mVM" id="We3-6o-hVx"/>
                         <outlet property="nameTextField" destination="1Mh-Fa-bbv" id="QKk-XX-ewc"/>
                         <outlet property="schoolTextField" destination="s4E-Fo-ezu" id="trn-LM-Ib5"/>
