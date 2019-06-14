@@ -1,6 +1,6 @@
 //
 //  Student.swift
-//  TripApp
+//  Student Demo
 //
 //  Created by mac_5 on 12/06/19.
 //  Copyright © 2019 Mac_mojave-2k19(2). All rights reserved.

@@ -1,6 +1,6 @@
 //
-//  TripListViewController.swift
-//  Trip App
+//  StudentListViewController.swift
+//  Student Demo
 //
 //  Created by mac_5 on 21/05/19.
 //  Copyright © 2019 mac_5. All rights reserved.
@@ -11,22 +11,21 @@ import RxCocoa
 import Firebase
 import SQLite3
 
-class Trips: NSObject {
-    var tripId : String = ""
+class Students: NSObject {
+    var studentId : String = ""
     var name : String = ""
     var standard : String = ""
     var school : String = ""
 }
 
-
-class TripListViewController: UIViewController {
+class StudentListViewController: UIViewController {
     
     let disposeBag = DisposeBag()
-    let trips: BehaviorRelay<[Trips]> =  BehaviorRelay(value: [])
+    let students: BehaviorRelay<[Students]> =  BehaviorRelay(value: [])
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var arrTrips : NSMutableArray = []
+    private var arrStudents : NSMutableArray = []
     var db: OpaquePointer?
     
     override func viewDidLoad() {
@@ -52,19 +51,19 @@ class TripListViewController: UIViewController {
         }
         
         // MARK: TableView Method
-        trips.bind(to: tableView.rx.items(cellIdentifier: "cell")) { row, model, cell in
-            let cell = cell as! TripTableViewCell
+        students.bind(to: tableView.rx.items(cellIdentifier: "cell")) { row, model, cell in
+            let cell = cell as! StudentTableViewCell
             let standard = model.standard
             let school = model.school
             
             cell.nameLabel.text = "Name : \(model.name)"
-            cell.dateLabel.text = "Standard : \(standard)"
+            cell.standardLabel.text = "Standard : \(standard)"
             cell.schoolLabel.text = "School : \(school)"
             cell.selectionStyle = .none
             
             }.disposed(by: disposeBag)
         
-        tableView.rx.modelSelected(Trips.self)
+        tableView.rx.modelSelected(Students.self)
             .map{ URL(string: $0.name) }
             .subscribe(onNext: { [weak self] url in
                 guard url != nil else {
@@ -75,10 +74,10 @@ class TripListViewController: UIViewController {
         tableView.rx.itemDeleted
             .subscribe(onNext: { print($0.last ?? 0)
                 if Reachability.isConnectedToNetwork(){
-                    let obj = self.arrTrips[$0.last ?? 0] as! Trips
+                    let obj = self.arrStudents[$0.last ?? 0] as! Students
                     let db = Firestore.firestore()
                     db.collection("students").rx.base
-                        .document(obj.tripId).delete() { err in
+                        .document(obj.studentId).delete() { err in
                             if let err = err {
                                 let alert = UIAlertController(title: "Error", message: err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
                                 alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
@@ -105,17 +104,17 @@ class TripListViewController: UIViewController {
     
     // MARK: - API Calling -
     func fetchingData() {
-//        if Reachability.isConnectedToNetwork() {
-//            let db = Firestore.firestore()
-//            db.collection("students")
-//                .addSnapshotListener { documentSnapshot, error in
-//                    guard documentSnapshot != nil else {
-//                        print("Error fetching document: \(error!)")
-//                        return
-//                    }
-//                    self.loadingData()
-//            }
-//        }else{
+        if Reachability.isConnectedToNetwork() {
+            let db = Firestore.firestore()
+            db.collection("students")
+                .addSnapshotListener { documentSnapshot, error in
+                    guard documentSnapshot != nil else {
+                        print("Error fetching document: \(error!)")
+                        return
+                    }
+                    self.loadingData()
+            }
+        }else{
             let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
                 .appendingPathComponent("Student.sqlite")
             if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
@@ -126,7 +125,7 @@ class TripListViewController: UIViewController {
                 dataFetch()
                 
             }
-//        }
+        }
     }
     
     // MARK:- OpenDatabase
@@ -162,7 +161,7 @@ class TripListViewController: UIViewController {
         var selectStatement: OpaquePointer? = nil
         
         if sqlite3_prepare(db, selectStatementString, -1, &selectStatement, nil) == SQLITE_OK{
-            self.arrTrips.removeAllObjects()
+            self.arrStudents.removeAllObjects()
             
             while(sqlite3_step(selectStatement) == SQLITE_ROW){
                 let id = sqlite3_column_int(selectStatement, 1)
@@ -184,16 +183,16 @@ class TripListViewController: UIViewController {
                 }
                 print("Query Result:")
                 print("\(id) | \(name) | \(school) | \(standard)")
-                let obj = Trips()
-                obj.tripId = "\(id)"
+                let obj = Students()
+                obj.studentId = "\(id)"
                 obj.name = name
                 obj.standard = "\(standard)"
                 obj.school = school
                 
-                self.arrTrips.add(obj)
+                self.arrStudents.add(obj)
             }
             
-            self.trips.accept(self.arrTrips as! [Trips])
+            self.students.accept(self.arrStudents as! [Students])
             self.tableView.reloadData()
             
             sqlite3_finalize(selectStatement)
@@ -247,22 +246,22 @@ class TripListViewController: UIViewController {
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
-                    self.arrTrips = []
+                    self.arrStudents = []
                     for document in querySnapshot!.documents {
                         print("\(document.documentID) => \(document.data())")
                         
                         let dict = document.data() as NSDictionary
                         
-                        let obj = Trips()
-                        obj.tripId =  document.documentID
+                        let obj = Students()
+                        obj.studentId =  document.documentID
                         obj.name = dict["name"] as! String
                         obj.standard = "\(dict["standard"] ?? 1)"
                         obj.school = dict["school"] as! String
                         print("obj \(obj)")
                         self.insert(name: obj.name, school: obj.school, standard: obj.standard)
-                        self.arrTrips.add(obj)
+                        self.arrStudents.add(obj)
                     }
-                    self.trips.accept(self.arrTrips as! [Trips])
+                    self.students.accept(self.arrStudents as! [Students])
                     self.tableView.reloadData()
                 }
         }
@@ -271,7 +270,7 @@ class TripListViewController: UIViewController {
     
     //MARK:- Button Action
     
-    @IBAction func addTrips(_ sender: Any) {
+    @IBAction func addStudents(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "AddStudentViewController") as! AddStudentViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }

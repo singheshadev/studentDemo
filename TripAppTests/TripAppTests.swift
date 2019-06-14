@@ -11,7 +11,7 @@ import XCTest
 
 class TripAppTests: XCTestCase {
 
-    let view = TripListViewController()
+    let view = StudentListViewController()
     var window: UIWindow!
     
     override func setUp() {

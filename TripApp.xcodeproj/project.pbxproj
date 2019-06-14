@@ -13,10 +13,9 @@
 		03373D1222929C1F001B8126 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03373D1022929C1F001B8126 /* LaunchScreen.storyboard */; };
 		03373D1D22929C1F001B8126 /* TripAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03373D1C22929C1F001B8126 /* TripAppTests.swift */; };
 		03373D2822929C1F001B8126 /* TripAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03373D2722929C1F001B8126 /* TripAppUITests.swift */; };
-		03373D3C2292AE7B001B8126 /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03373D3B2292AE7B001B8126 /* AddTripViewController.swift */; };
-		03373D3E2292BBA5001B8126 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03373D3D2292BBA5001B8126 /* DatePickerDialog.swift */; };
-		0383E0252293ECC700D4A3B9 /* TripListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383E0242293ECC700D4A3B9 /* TripListViewController.swift */; };
-		0383E03022940F1B00D4A3B9 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383E02F22940F1B00D4A3B9 /* TripTableViewCell.swift */; };
+		03373D3C2292AE7B001B8126 /* AddStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03373D3B2292AE7B001B8126 /* AddStudentViewController.swift */; };
+		0383E0252293ECC700D4A3B9 /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383E0242293ECC700D4A3B9 /* StudentListViewController.swift */; };
+		0383E03022940F1B00D4A3B9 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383E02F22940F1B00D4A3B9 /* StudentTableViewCell.swift */; };
 		188CD35BD0F6A606DF7195E8 /* Pods_TripAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F14E8F87AB0A48C465BB86D /* Pods_TripAppTests.framework */; };
 		2A6760BE22B1229A009EF8B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A6760BD22B1229A009EF8B7 /* GoogleService-Info.plist */; };
 		2A6760C022B12794009EF8B7 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6760BF22B12794009EF8B7 /* Student.swift */; };
@@ -55,10 +54,9 @@
 		03373D2322929C1F001B8126 /* TripAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03373D2722929C1F001B8126 /* TripAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripAppUITests.swift; sourceTree = "<group>"; };
 		03373D2922929C1F001B8126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03373D3B2292AE7B001B8126 /* AddTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
-		03373D3D2292BBA5001B8126 /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
-		0383E0242293ECC700D4A3B9 /* TripListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewController.swift; sourceTree = "<group>"; };
-		0383E02F22940F1B00D4A3B9 /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
+		03373D3B2292AE7B001B8126 /* AddStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudentViewController.swift; sourceTree = "<group>"; };
+		0383E0242293ECC700D4A3B9 /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
+		0383E02F22940F1B00D4A3B9 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		2578DAE561300E0E2F722A30 /* Pods_TripAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A6760BD22B1229A009EF8B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2A6760BF22B12794009EF8B7 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 			children = (
 				0383E0312294324900D4A3B9 /* Model */,
 				0383E02E229407B300D4A3B9 /* Controllers */,
-				0383E02C2293F04500D4A3B9 /* DatePicker */,
 				03373D0722929C1D001B8126 /* AppDelegate.swift */,
 				03373D0B22929C1D001B8126 /* Main.storyboard */,
 				03373D0E22929C1F001B8126 /* Assets.xcassets */,
@@ -157,19 +154,11 @@
 			path = TripAppUITests;
 			sourceTree = "<group>";
 		};
-		0383E02C2293F04500D4A3B9 /* DatePicker */ = {
-			isa = PBXGroup;
-			children = (
-				03373D3D2292BBA5001B8126 /* DatePickerDialog.swift */,
-			);
-			path = DatePicker;
-			sourceTree = "<group>";
-		};
 		0383E02E229407B300D4A3B9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				03373D3B2292AE7B001B8126 /* AddTripViewController.swift */,
-				0383E0242293ECC700D4A3B9 /* TripListViewController.swift */,
+				03373D3B2292AE7B001B8126 /* AddStudentViewController.swift */,
+				0383E0242293ECC700D4A3B9 /* StudentListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -177,7 +166,7 @@
 		0383E0312294324900D4A3B9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0383E02F22940F1B00D4A3B9 /* TripTableViewCell.swift */,
+				0383E02F22940F1B00D4A3B9 /* StudentTableViewCell.swift */,
 				2A6760BF22B12794009EF8B7 /* Student.swift */,
 				2A6760C122B12E1A009EF8B7 /* Reachability.swift */,
 			);
@@ -430,12 +419,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A6760C222B12E1A009EF8B7 /* Reachability.swift in Sources */,
-				0383E03022940F1B00D4A3B9 /* TripTableViewCell.swift in Sources */,
+				0383E03022940F1B00D4A3B9 /* StudentTableViewCell.swift in Sources */,
 				2A6760C022B12794009EF8B7 /* Student.swift in Sources */,
-				0383E0252293ECC700D4A3B9 /* TripListViewController.swift in Sources */,
-				03373D3C2292AE7B001B8126 /* AddTripViewController.swift in Sources */,
+				0383E0252293ECC700D4A3B9 /* StudentListViewController.swift in Sources */,
+				03373D3C2292AE7B001B8126 /* AddStudentViewController.swift in Sources */,
 				03373D0822929C1D001B8126 /* AppDelegate.swift in Sources */,
-				03373D3E2292BBA5001B8126 /* DatePickerDialog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

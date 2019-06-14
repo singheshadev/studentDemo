@@ -102,7 +102,7 @@ class AddStudentViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func addTripButton(_ sender: Any) {
+    @IBAction func addStudentButton(_ sender: Any) {
         
         if(nameTextField.text == ""){
             let alert = UIAlertController(title: "Alert", message: "Please enter name.", preferredStyle: UIAlertController.Style.alert)
